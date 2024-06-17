@@ -1,0 +1,22 @@
+/* about page */
+
+/* Auto layout */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 19px 11px 48px;
+    gap: 8px;
+
+    position: relative;
+    width: 320px;
+    height: 568px;
+    overflow-y: scroll;
+
+    background: #1D1D1D;
+}
+
+h1 {
+    color: white;
+}
