@@ -1,0 +1,77 @@
+---
+import Navigation from "../components/Navigation.astro"
+import Search from "../components/Search.astro"
+import MainHead from "../layouts/MainHead.astro"
+
+const createdDate = "2024-06-12";
+const updatedDate = "2024-06-19";
+const tags = ["gilgamesh", "livro", "drama"];
+const status = "em progresso";
+---
+
+<MainHead title="Gilgamesh">
+    <Navigation/>
+    <div class="flex items-center justify-center">
+        <h1 class="font-bold text-4xl py-2 lg:pt-10 lg:text-8xl">GILGAMESH</h1>
+    </div>
+
+	<hr class="h-px mb-3 mx-auto max-w-64 bg-gray-200 border-0 dark:bg-gray-200">
+
+    <div class="flex items-center justify-center">
+        <p class="italic text-center text-xs max-w-72 lg:text-xl lg:max-w-3xl lg:pb-7 lg:pt-3">
+            A rotina enclausurada e miserável de uma jovem sustentada pela mãe psicologicamente instável a leva a fazer amizades com um ser inanimado.  Ambas as entidades escalam o pilar do transhumanismo a fim de alcançar novos patamares de existência.
+        </p>
+    </div>
+
+    <div class="relative overflow-x-auto lg:max-w-3xl lg:mx-auto">
+		<table class="border table-fixed w-11/12 text-xs left-text mx-auto text-left m-2 dark:border-gray-500">
+			<tbody class="bg-zinc-900 lg:text-base">
+				<tr>
+					<td scope="row" class="px-3 py-2 text-gray-500 whitespace-nowrap dark:text-zinc-400">
+						creation date
+					</td>
+					<td scope="row" class="px-3 py-2 text-gray-500 whitespace-nowrap dark:text-white">
+						{createdDate}
+					</td>
+				</tr>
+				<tr>
+					<td scope="row" class="px-3 py-1 text-gray-500 whitespace-nowrap dark:text-zinc-400">
+						updated date
+					</td>
+					<td scope="row" class="px-3 py-1 text-gray-500 whitespace-nowrap dark:text-white">
+                        {updatedDate}
+                    </td>
+				</tr>
+				<tr>
+					<td scope="row" class="px-3 py-1 text-gray-500 whitespace-nowrap dark:text-zinc-400">
+						tags
+					</td>
+					<td scope="row" class="px-3 py-1 text-gray-500 whitespace-nowrap dark:text-white">
+						{tags.map((tag) => 
+							<span class="bg-gray-100 text-gray-800 text-base font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-zinc-200 border border-gray-500">
+							<a href={`tag/${tag}`}>{tag}</a>
+							</span>)}
+                    </td>
+				</tr>
+				<tr>
+					<td scope="row" class="px-3 py-1 text-gray-500 whitespace-nowrap dark:text-zinc-400">
+						status
+					</td>
+					<td scope="row" class="px-3 py-1 text-gray-500 whitespace-nowrap dark:text-white">
+                        {status}
+                    </td>
+				</tr>
+                
+			</tbody>
+		</table>
+	</div>
+
+	
+	<div class="mx-auto text-left">
+		<h2 class="px-96 font-semibold text-4xl py-2 lg:pt-10 lg:text-5xl">chapters</h1>
+	</div>
+	
+	<hr class="h-px mb-3 mx-auto lg:max-w-4xl bg-gray-200 border-0 dark:bg-gray-200">
+
+	<Search/>
+</MainHead>

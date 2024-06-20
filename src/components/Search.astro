@@ -1,0 +1,90 @@
+---
+const capitulos = ["0: aquele que o abismo viu", "1: nossa morte lenta",
+                "2: palavras ao vento", "3: ponto sem retorno",
+                "4: dualidade", "5: entre mentes",
+                "6: rio de janeiro", "8: participio",
+                "9: sejam as trevas eternas", "10: coração de lata",
+                "11: fefwef ", "3fe ", "f24f", "fewf",
+                "fef2f", "fef2f", "fef2f", "fef2",
+                "fef2f", "fef2f", "fef2f", "fef2",
+                "fef2f", "fef2f", "fef2f", "fef2",
+                "fef2f", "fef2f", "fef2f", "fef2"];
+---
+
+
+<!-- <div class="max-w-md mx-auto lg:pt-4">
+    <button id="dropdownUsersButton"
+            data-dropdown-toggle="dropdownUsers"
+            data-dropdown-placement="bottom"
+            class="border text-white bg-blue-700 hover:bg-zinc-800 text-sm lg:text-base lg:px-4 lg:py-2.5 text-center flex items-center space-x-1 dark:bg-zinc-800 dark:border-zinc-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-zinc-500 dark:focus:border-zinc-500 lg:font-medium"
+            type="button">
+        <span class="flex-grow">capitulos</span>
+        <svg class="w-4 h-4 lg:w-2.5 lg:h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+        </svg>
+    </button> -->
+<!-- Dropdown menu -->
+<div class="max-w-md mx-auto lg:pt-4">
+    <button id="dropdownUsersButton" data-dropdown-toggle="dropdownUsers" data-dropdown-placement="bottom" class="border text-white bg-blue-700 hover:bg-zinc-800 text-sm lg:px-60 lg:py-2.5 text-center inline-flex items-center dark:bg-zinc-800 dark:border-zinc-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-zinc-500 dark:focus:border-zinc-500 lg:font-medium" type="button">capitulos<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+    </svg>
+    </button>
+
+    <div id="dropdownUsers" class="z-10 bg-white shadow hidden w-60 dark:bg-gray-700">
+        <ul class="overflow-y-auto text-gray-700 dark:text-gray-200 lg:h-64" aria-labelledby="dropdownUsersButton">    
+            {capitulos.map((capitulo) => 
+                <li>
+                    <a href="{capitulo}" class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                        {capitulo}
+                    </a>
+                </li>
+            )}
+        </ul>
+    </div>
+</div>
+
+
+<!-- <img class="w-6 h-6 me-2 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Jese image"> -->
+
+
+
+<!-- <div class="max-w-md mx-auto flex">
+    <select id="capitulos" class=" overflow-y-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-zinc-700 block w-full p-2.5 dark:bg-zinc-800 dark:border-zinc-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-zinc-500 dark:focus:border-zinc-500">
+        <option selected>....</option>
+        {tags.map((tag) => 
+				<option value={`gilgamesh/${tag}`}>{tag}</option>)}
+    </select>
+    <button id="GO" class="  font-bold py-2 px-4 mx-3 bg-gray-50 border border-gray-300 text-gray-900 dark:bg-zinc-800 dark:border-zinc-500 dark:placeholder-gray-400 dark:text-white">
+                    GO
+    </button>
+</div>
+
+
+
+<script>
+        document.getElementById('GO').addEventListener('click', function() {
+            const selectedChapter = document.getElementById('capitulos').value;
+            if (selectedChapter) {
+                window.location.href = selectedChapter;
+            } else {
+                alert('Por favor, selecione um capítulo.');
+            }
+        });
+    </script>
+</div> -->
+
+<script>
+        document.getElementById('dropdownUsersButton').addEventListener('click', function() {
+            var dropdown = document.getElementById('dropdownUsers');
+            dropdown.classList.toggle('hidden');
+        });
+
+        // Event listener global para detectar cliques fora do dropdown
+        document.addEventListener('click', function(event) {
+            var dropdown = document.getElementById('dropdownUsers');
+            if (!dropdown.classList.contains('hidden') && !dropdown.contains(event.target) && event.target.id !== 'dropdownUsersButton') {
+                dropdown.classList.add('hidden');
+            }
+        });
+
+</script>
