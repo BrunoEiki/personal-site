@@ -1,14 +1,10 @@
 ---
-const capitulos = ["0: aquele que o abismo viu", "1: nossa morte lenta",
-                "2: palavras ao vento", "3: ponto sem retorno",
-                "4: dualidade", "5: entre mentes",
-                "6: rio de janeiro", "8: participio",
-                "9: sejam as trevas eternas", "10: coração de lata",
-                "11: fefwef ", "3fe ", "f24f", "fewf",
-                "fef2f", "fef2f", "fef2f", "fef2",
-                "fef2f", "fef2f", "fef2f", "fef2",
-                "fef2f", "fef2f", "fef2f", "fef2",
-                "fef2f", "fef2f", "fef2f", "fef2"];
+const capitulos = ["aquele que o abismo viu", "nossa morte lenta",
+                "palavras ao vento", "ponto sem retorno",
+                "dualidade", "entre mentes",
+                "rio de janeiro", "participio",
+                "sejam as trevas eternas", "coração de lata"
+                ];
 ---
 
 
@@ -24,20 +20,22 @@ const capitulos = ["0: aquele que o abismo viu", "1: nossa morte lenta",
         </svg>
     </button> -->
 <!-- Dropdown menu -->
-<div class="max-w-md mx-auto lg:pt-4">
-    <button id="dropdownUsersButton" data-dropdown-toggle="dropdownUsers" data-dropdown-placement="bottom" class="border text-white bg-blue-700 hover:bg-zinc-800 text-sm lg:px-60 lg:py-2.5 text-center inline-flex items-center dark:bg-zinc-800 dark:border-zinc-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-zinc-500 dark:focus:border-zinc-500 lg:font-medium" type="button">capitulos<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-    </svg>
+<div class="max-w-md mx-10 lg:pt-4">
+    <button id="dropdownUsersButton" data-dropdown-toggle="dropdownUsers" data-dropdown-placement="bottom" class="inline-flex items-center border text-white bg-blue-700 hover:bg-zinc-800 text-xs pl-6 pr-3 py-1 sm:pl-8 sm:pr-6 sm:py-1 sm:text-base lg:text-base lg:mx-80 lg:pl-8 lg:pr-6 lg:py-1 text-left dark:bg-zinc-800 dark:border-zinc-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-zinc-500 dark:focus:border-zinc-500 lg:font-medium" type="button">
+        capítulos
+        <svg class="w-2 h-2 ms-24 sm:ms-96" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m1 1 4 4 4-4"/>
+        </svg>
     </button>
-
-    <div id="dropdownUsers" class="z-10 bg-white shadow hidden w-60 dark:bg-gray-700">
+    
+    <div id="dropdownUsers" class="absolute z-10 bg-white shadow hidden w-60 lg:w-search lg:ml-80 dark:bg-zinc-700">
         <ul class="overflow-y-auto text-gray-700 dark:text-gray-200 lg:h-64" aria-labelledby="dropdownUsersButton">    
-            {capitulos.map((capitulo) => 
-                <li>
-                    <a href="{capitulo}" class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        {capitulo}
-                    </a>
-                </li>
+            {capitulos.map((capitulo, index) => 
+            <li>
+                <a href="{capitulo}" class="flex items-center pl-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                    {index}: {capitulo}
+                </a>
+            </li>
             )}
         </ul>
     </div>

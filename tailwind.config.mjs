@@ -7,6 +7,9 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				serif: ["Source Serif Pro", defaultTheme.fontFamily.serif],
+			},
+			width: {
+				'search': '515px',
 			}
 		},
 	},
