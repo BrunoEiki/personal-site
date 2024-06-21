@@ -8,13 +8,26 @@
 </div>
 
 <style>
+    @tailwind base;
         .separator:before {
             content: "|";
             margin: 0 0.5rem;
-            color: #FFFFFF; /* Cor da barra vertical */
+            color: black;
         }
         .separator:first-child:before {
             content: "";
             margin: 0;
         }
-    </style>
+
+@media (prefers-color-scheme: dark) {
+        .separator:before {
+            content: "|";
+            margin: 0 0.5rem;
+            color: white;
+        }
+        .separator:first-child:before {
+            content: "";
+            margin: 0;
+        }
+    }
+</style>

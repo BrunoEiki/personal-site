@@ -1,0 +1,24 @@
+---
+const { bookTitle, chapterNumber } = Astro.props;
+const prev = Number(chapterNumber) - 1;
+const next = Number(chapterNumber) + 1;
+
+const visible = prev > -1;
+---
+
+<div class="flex justify-between my-8 mx-4">
+    {visible ? 
+        <a href={`/${bookTitle}/cap${prev}`} class="inline-flex items-center border text-white bg-blue-700 hover:bg-zinc-800 text-xs px-3 py-1 dark:bg-zinc-800 dark:border-zinc-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-zinc-500 dark:focus:border-zinc-500 lg:font-medium" type="a">
+            previous
+        </a> : 
+            <p class="p-4"></p>
+    }
+
+    <a href={`#`} class="inline-flex items-center border text-white bg-blue-700 hover:bg-zinc-800 text-xs px-3 py-1 dark:bg-zinc-800 dark:border-zinc-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-zinc-500 dark:focus:border-zinc-500 lg:font-medium" type="a">
+        comments
+    </a>
+
+    <a href={`/${bookTitle}/cap${next}`} class="inline-flex items-center border text-white bg-blue-700 hover:bg-zinc-800 text-xs px-3 py-1 dark:bg-zinc-800 dark:border-zinc-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-zinc-500 dark:focus:border-zinc-500 lg:font-medium" type="a">
+        next
+    </a>
+</div>

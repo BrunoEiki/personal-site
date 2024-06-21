@@ -1,6 +1,8 @@
 ---
-layout: ../../layouts/MainHead.astro
-title: 'aquele que o abismo viu'
+layout: ../../layouts/ChapterLayout.astro
+bookTitle: 'gilgamesh'
+chapterTitle: 'aquele que o abismo viu'
+chapterNumber: 0
 pubDate: 2024-06-18
 author: 'eiki'
 image:

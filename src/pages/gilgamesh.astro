@@ -20,7 +20,9 @@ const status = "em progresso";
 <MainHead title="Gilgamesh">
     <Navigation/>
     <div class="flex justify-center">
-        <h1 class="font-bold text-4xl py-2 sm:text-6xl lg:pt-10 lg:text-8xl">GILGAMESH</h1>
+        <h1 class="font-bold text-4xl py-2 sm:text-6xl lg:pt-10 lg:text-8xl">
+			GILGAMESH
+		</h1>
     </div>
 
 	<hr class="h-px mb-3 mx-auto max-w-64 bg-gray-200 border-0 dark:bg-gray-200">
@@ -81,7 +83,7 @@ const status = "em progresso";
 		</h2>
 	</div>
 	
-	<hr class="h-px mb-3 mx-auto mx-10 bg-gray-200 border-0 lg:mx-80 dark:bg-gray-200">
+	<hr class="h-px mb-3 mx-auto mx-6 bg-gray-200 border-0 lg:mx-80 dark:bg-gray-200">
 
 
 	<Search/>
@@ -93,8 +95,8 @@ const status = "em progresso";
 				{capitulos.map((chapter, index) => 
 					// <a href={`chapter/${chapter}`}>{chapter}</a>
 					<tr class="hover:bg-zinc-800">
-						<td class="px-3 py-1 text-gray-500">
-							<img class="w-6 h-6 me-2 lg:w-20 lg:h-20" src={`/src/images/gilgamesh/${index}.png`}>
+						<td class="lg:px-3 lg:py-1 text-gray-500">
+							<img class="w-16 h-6 me-2 lg:w-20 lg:h-20" src={`/src/images/gilgamesh/${index}.png`}>
 						</td>
 						<td class="px-3 py-1 text-gray-500  dark:text-zinc-400">
 							<a href={`/gilgamesh/cap${index}`}>
