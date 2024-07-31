@@ -1,0 +1,38 @@
+---
+import MainHead from "../layouts/MainHead.astro"
+
+import Navigation from "../components/Navigation.astro"
+---
+
+<MainHead title="Astro">
+    <Navigation/>
+    <div class="flex justify-center">
+        <h1 class="font-bold text-4xl py-2 sm:text-6xl lg:pt-10 lg:text-8xl">
+			SOBRE
+		</h1>
+    </div>
+
+    <!-- <hr class="h-px mb-3 mx-auto max-w-64 lg:max-w-96 bg-gray-200 border-0 dark:bg-gray-200"> -->
+
+	<div class="mx-auto sm:max-w-sm md:max-w-xl lg:max-w-3xl mb-10">
+		<a href="https://www.turbosquid.com/pt_br/3d-models/3d-ryan-gosling-hyper-realistic-full-body-fully-rigged-character-model-2142226" target="_blank">
+			<img src="/src/images/ryan2.png">
+		</a>
+	</div>
+
+	<div class="flex justify-center p-5">
+		<p class="text-xs sm:text-sm lg:text-lg lg:mx-96">
+			design inspirado pelo <a href="https://gwern.net/" class="italic text-zinc-300">Gwern</a>.
+		</p>
+	</div>
+	<div class="flex justify-center p-5">
+		<p class="text-xs sm:text-sm lg:text-lg lg:mx-96">
+			o poema na página inicial é um trecho de "You Are Tired, (I think)" do E. E. Cummings
+		</p>
+	</div>
+	<div class="flex justify-center p-5 mb-10">
+		<p class="text-xs sm:text-sm lg:text-lg lg:mx-96">
+			a arte ASCII do corvo com a chave é o símbolo do SciHub. só achei legal e coloquei.
+		</p>
+	</div>
+</MainHead>

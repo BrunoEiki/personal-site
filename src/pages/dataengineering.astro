@@ -3,19 +3,20 @@ import Navigation from "../components/Navigation.astro"
 import Search from "../components/Search.astro"
 import MainHead from "../layouts/MainHead.astro"
 
-const createdDate = "2024-06-12";
-const updatedDate = "2024-06-19";
-const tags = ["gilgamesh", "livro", "drama"];
+const title = "dataengineering"
+const createdDate = "30-07-2024";
+const updatedDate = "30-07-2024";
+const tags = ["estudo", "airflow", "terraform", "cloud", "python"];
 const status = "em progresso";
 
-const allPosts = await Astro.glob('./gilgamesh/*.md');
+const allPosts = await Astro.glob("./dataengineering/*.md");
 ---
 
-<MainHead title="Gilgamesh">
+<MainHead title=`${title}`>
     <Navigation/>
     <div class="flex justify-center">
 		<h1 class="font-bold text-4xl py-2 sm:text-6xl lg:pt-10 lg:text-8xl">
-			GILGAMESH
+			DATA ENGINEERING
 		</h1>
     </div>
 
@@ -24,7 +25,7 @@ const allPosts = await Astro.glob('./gilgamesh/*.md');
     <div class="flex justify-center">
         <p class="italic text-center text-xs max-w-72 sm:text-base sm:max-w-lg lg:text-xl lg:max-w-3xl lg:pb-7 lg:pt-3">
             <!-- A rotina enclausurada e miserável de uma jovem sustentada pela mãe psicologicamente instável a leva a fazer amizades com um ser inanimado.  Ambas as entidades escalam o pilar do transhumanismo a fim de alcançar novos patamares de existência. -->
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam purus mauris, semper eu est in, malesuada aliquet sapien. Fusce ullamcorper ex a dictum finibus. In tortor orci, tempor quis leo sed, posuere molestie diam. Proin egestas diam vel lacus mollis, nec varius diam elementum. Donec turpis justo, faucibus sit amet massa eget, vulputate lacinia lectus. Fusce quis sem vehicula, condimentum elit id, suscipit dolor.
+			Como construir sistemas para extrair dados e colocá-los em estado útil. De modo geral é constituído por 3 etapas: extração, carregamento e transformação. Também envolve garantir compliance de acordo com as regras de negócio e a LGPD.  
 		</p>
     </div>
 
@@ -91,10 +92,10 @@ const allPosts = await Astro.glob('./gilgamesh/*.md');
 					// <a href={`chapter/${chapter}`}>{chapter}</a>
 					<tr class="hover:bg-zinc-800">
 						<td class="lg:px-3 lg:py-1 text-gray-500">
-							<img class="w-16 h-6 me-2 lg:w-20 lg:h-20" src={`/src/images/gilgamesh/${index}.png`}>
+							<img class="w-16 h-6 me-2 lg:w-20 lg:h-20" src={`/src/images/${title}/${index}.png`}>
 						</td>
 						<td class="px-3 py-1 text-gray-500  dark:text-zinc-400">
-							<a href={`/gilgamesh/cap${index}`}>
+							<a href={`/${title}/cap${index}`}>
 								capítulo {index}: {chapter.frontmatter.chapterTitle}
 							</a>
 						</td>

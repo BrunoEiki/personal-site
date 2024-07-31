@@ -1,0 +1,38 @@
+---
+import MainHead from "../../layouts/MainHead.astro";
+
+export async function getStaticPaths() {
+    const allPosts = await Astro.glob('../*/*.md');
+
+    const uniqueTags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+
+    return uniqueTags.map((tag) => {
+        const filteredPosts = allPosts.filter((post) => post.frontmatter.tags.includes(tag));
+            return {
+                params: { tag },
+                props: { posts: filteredPosts },
+            };
+        }
+    );
+}
+
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+
+<MainHead title="ewfwefew", description="fwerfew">
+    <p>Posts tagged with {tag}</p>
+    <p>{posts[0].frontmatter.tags[0]}</p>
+    <ul>
+        {posts.map((post) => 
+            <li>
+                <a href={post.url}>
+                    {post.frontmatter.chapterTitle}
+                </a>
+            </li>
+            )
+        }
+    </ul>
+</MainHead> 

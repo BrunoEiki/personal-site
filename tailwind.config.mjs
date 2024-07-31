@@ -10,6 +10,15 @@ module.exports = {
 			},
 			width: {
 				'search': '515px',
+			},
+			fontSize: {
+				'xxs': '3.2px',
+			},
+			leading: {
+				'1': '3.2px',
+			},
+			margin: {
+				'100': '20rem', 
 			}
 		},
 	},
