@@ -2,6 +2,9 @@
 import MainHead from "../layouts/MainHead.astro"
 
 import Navigation from "../components/Navigation.astro"
+
+import { Image } from 'astro:assets';
+import leon from '../images/leon_kennedy_re4uhd_realmoonlight.png';
 ---
 
 <MainHead title="Astro">
@@ -16,7 +19,7 @@ import Navigation from "../components/Navigation.astro"
 	
 	<div class="mx-auto max-w-44 sm:max-w-sm lg:max-w-md mb-10">
 		<a href="https://p3dm.ru/files/characters/human/13018-leon-kennedy-agent.html" target="_blank">
-			<img src="/src/images/leon_kennedy_re4uhd_realmoonlight.png" >
+			<Image src={leon} alt="Leon Kennedy's 3d Model">
 		</a>
 	</div>
 	

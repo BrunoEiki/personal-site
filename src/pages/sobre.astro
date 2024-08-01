@@ -2,6 +2,9 @@
 import MainHead from "../layouts/MainHead.astro"
 
 import Navigation from "../components/Navigation.astro"
+
+import { Image } from 'astro:assets';
+import ryan2 from '../images/ryan2.png';
 ---
 
 <MainHead title="Astro">
@@ -16,7 +19,7 @@ import Navigation from "../components/Navigation.astro"
 
 	<div class="mx-auto max-w-96 md:max-w-xl lg:max-w-3xl mb-5 lg:mb-10">
 		<a href="https://www.turbosquid.com/pt_br/3d-models/3d-ryan-gosling-hyper-realistic-full-body-fully-rigged-character-model-2142226" target="_blank">
-			<img src="/src/images/ryan2.png">
+			<Image src={ryan2} alt="3d model of ryan gosling">
 		</a>
 	</div>
 

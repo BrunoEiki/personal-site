@@ -3,6 +3,8 @@ import Navigation from "../components/Navigation.astro"
 import Search from "../components/Search.astro"
 import MainHead from "../layouts/MainHead.astro"
 
+import ImageListComponent from "../components/ImageListComponent.astro"
+
 const title = "gilgamesh";
 const createdDate = "2024-06-12";
 const updatedDate = "2024-06-19";
@@ -90,7 +92,7 @@ const allPosts = await Astro.glob('./gilgamesh/*.md');
 					// <a href={`chapter/${chapter}`}>{chapter}</a>
 					<tr class="hover:bg-zinc-800">
 						<td class="lg:px-3 lg:py-1 text-gray-500">
-							<img class="w-16 h-6 me-2 lg:w-20 lg:h-20" src={`/src/images/gilgamesh/${index}.png`}>
+							<ImageListComponent imagePath={`/src/images/gilgamesh/${index}.png`} altText="header image"/>
 						</td>
 						<td class="px-3 py-1 text-gray-500  dark:text-zinc-400">
 							<a href={`/gilgamesh/cap${index}`}>
@@ -101,7 +103,7 @@ const allPosts = await Astro.glob('./gilgamesh/*.md');
 							views: 301k
 						</td>
 					</tr>
-					)}
+				)}
 			</tbody>
 		</table>
 	</div>

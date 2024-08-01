@@ -3,6 +3,8 @@ import Navigation from "../components/Navigation.astro"
 import Search from "../components/Search.astro"
 import MainHead from "../layouts/MainHead.astro"
 
+import ImageListComponent from "../components/ImageListComponent.astro"
+
 const title = "dataengineering"
 const createdDate = "30-07-2024";
 const updatedDate = "30-07-2024";
@@ -92,7 +94,7 @@ const allPosts = await Astro.glob("./dataengineering/*.md");
 					// <a href={`chapter/${chapter}`}>{chapter}</a>
 					<tr class="hover:bg-zinc-800">
 						<td class="lg:px-3 lg:py-1 text-gray-500">
-							<img class="w-16 h-6 me-2 lg:w-20 lg:h-20" src={`/src/images/${title}/${index}.png`}>
+							<ImageListComponent imagePath={`/src/images/${title}/${index}.png`} altText="header image"/>
 						</td>
 						<td class="px-3 py-1 text-gray-500  dark:text-zinc-400">
 							<a href={`/${title}/cap${index}`}>
