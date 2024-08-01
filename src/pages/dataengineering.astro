@@ -14,8 +14,8 @@ const allPosts = await Astro.glob("./dataengineering/*.md");
 
 <MainHead title=`${title}`>
     <Navigation/>
-    <div class="flex justify-center">
-		<h1 class="font-bold text-4xl py-2 sm:text-6xl lg:pt-10 lg:text-8xl">
+    <div class="flex justify-center text-center">
+		<h1 class="font-bold text-4xl py-2  sm:text-6xl lg:pt-10 lg:text-8xl">
 			DATA ENGINEERING
 		</h1>
     </div>
@@ -82,7 +82,7 @@ const allPosts = await Astro.glob("./dataengineering/*.md");
 	<hr class="h-px mb-3 mx-auto mx-6 bg-gray-200 border-0 lg:mx-80 dark:bg-gray-200">
 
 
-	<Search capitulos={allPosts}/>
+	<Search title={title}/>
 
 
 	<div class="relative overflow-x-auto lg:max-w-6xl lg:ml-80 lg:mt-2">

@@ -12,13 +12,17 @@ module.exports = {
 				'search': '515px',
 			},
 			fontSize: {
-				'xxs': '3.2px',
+				'xxs': '3.8px',
+				'xxxs': '2px',
 			},
 			leading: {
 				'1': '3.2px',
 			},
 			margin: {
 				'100': '20rem', 
+			},
+			height: {
+				'px0': '0.09px',
 			}
 		},
 	},

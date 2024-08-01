@@ -3,6 +3,7 @@ import Navigation from "../components/Navigation.astro"
 import Search from "../components/Search.astro"
 import MainHead from "../layouts/MainHead.astro"
 
+const title = "gilgamesh";
 const createdDate = "2024-06-12";
 const updatedDate = "2024-06-19";
 const tags = ["gilgamesh", "livro", "drama"];
@@ -80,9 +81,7 @@ const allPosts = await Astro.glob('./gilgamesh/*.md');
 	
 	<hr class="h-px mb-3 mx-auto mx-6 bg-gray-200 border-0 lg:mx-80 dark:bg-gray-200">
 
-
-	<Search capitulos={allPosts}/>
-
+	<Search title={title}/>
 
 	<div class="relative overflow-x-auto lg:max-w-6xl lg:ml-80 lg:mt-2">
 		<table class="flex-wrap mt-3 table-auto w-11/12 text-xs left-text mx-auto text-left m-2">
