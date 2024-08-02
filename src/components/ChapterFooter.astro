@@ -4,12 +4,12 @@ const prev = Number(chapterNumber) - 1;
 const next = Number(chapterNumber) + 1;
 
 const visiblePrev = prev > -1;
-const visibleNext = true;
+const visibleNext = next < 2;
 ---
 
 <div class="flex justify-evenly my-8 mx-4 text-xs lg:text-lg lg:mt-2 lg:mx-40">
     {visiblePrev ? 
-        <a href={`/${title}/cap${prev}`} class="inline-flex items-center border text-white bg-blue-700 hover:bg-zinc-800 px-3 py-1 dark:bg-zinc-800 dark:border-zinc-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-zinc-500 dark:focus:border-zinc-500 lg:font-medium" type="a">
+        <a href={`/${title}/cap${prev}`} class="inline-flex items-center border dark:text-zinc-400 hover:text-white hover:bg-zinc-800 px-3 py-1 dark:bg-zinc-800 dark:border-zinc-500 dark:placeholder-gray-400 dark:focus:ring-zinc-500 dark:focus:border-zinc-500 lg:font-medium" type="a">
             previous
         </a> : 
             <p class="p-4"></p>
@@ -20,7 +20,7 @@ const visibleNext = true;
     </a> -->
 
     {visibleNext ?
-        <a href={`/${title}/cap${next}`} class="inline-flex items-center border text-white bg-blue-700 hover:bg-zinc-800 px-3 py-1 dark:bg-zinc-800 dark:border-zinc-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-zinc-500 dark:focus:border-zinc-500 lg:font-medium" type="a">
+        <a href={`/${title}/cap${next}`} class="inline-flex items-center border dark:text-zinc-400 hover:text-white hover:bg-zinc-800 px-3 py-1 dark:bg-zinc-800 dark:border-zinc-500 dark:placeholder-gray-400 dark:focus:ring-zinc-500 dark:focus:border-zinc-500 lg:font-medium" type="a">
             next
         </a> :
             <p class="p-4"></p>

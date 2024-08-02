@@ -17,7 +17,7 @@ const allPosts = await Astro.glob('./gilgamesh/*.md');
 <MainHead title="Gilgamesh">
     <Navigation/>
     <div class="flex justify-center">
-		<h1 class="font-bold text-4xl py-2 sm:text-6xl lg:pt-10 lg:text-8xl">
+		<h1 class="font-bold text-6xl py-2 sm:text-7xl lg:pt-10 lg:text-8xl">
 			GILGAMESH
 		</h1>
     </div>
@@ -25,15 +25,15 @@ const allPosts = await Astro.glob('./gilgamesh/*.md');
 	<hr class="h-px mb-3 mx-auto max-w-64 bg-gray-200 border-0 dark:bg-gray-200">
 
     <div class="flex justify-center">
-        <p class="italic text-center text-xs max-w-72 sm:text-base sm:max-w-lg lg:text-xl lg:max-w-3xl lg:pb-7 lg:pt-3">
+        <p class="italic text-center max-w-72 sm:max-w-lg lg:max-w-3xl lg:pb-7 lg:pt-3">
             <!-- A rotina enclausurada e miserável de uma jovem sustentada pela mãe psicologicamente instável a leva a fazer amizades com um ser inanimado.  Ambas as entidades escalam o pilar do transhumanismo a fim de alcançar novos patamares de existência. -->
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam purus mauris, semper eu est in, malesuada aliquet sapien. Fusce ullamcorper ex a dictum finibus. In tortor orci, tempor quis leo sed, posuere molestie diam. Proin egestas diam vel lacus mollis, nec varius diam elementum. Donec turpis justo, faucibus sit amet massa eget, vulputate lacinia lectus. Fusce quis sem vehicula, condimentum elit id, suscipit dolor.
+			A rotina enclausurada e miserável de uma jovem com a mãe instável e a avó decrépita a leva a fazer amizade com seres inanimados. Ambas as entidades escalam o pilar do transhumanismo a fim de alcançar novos patamares de existência.   
 		</p>
     </div>
 
     <div class="relative overflow-x-auto lg:max-w-3xl lg:mx-auto">
-		<table class="flex-wrap border mt-3 table-fixed w-11/12 text-xs left-text mx-auto text-left m-2 dark:border-gray-500">
-			<tbody class="bg-zinc-900 sm:text-sm lg:text-base">
+		<table class="flex-wrap border mt-3 table-fixed w-11/12 left-text mx-auto text-left m-2 dark:border-gray-500">
+			<tbody class="bg-zinc-900">
 				<tr>
 					<td scope="row" class="px-3 py-2 text-gray-500 whitespace-nowrap dark:text-zinc-400">
 						creation date
@@ -85,9 +85,9 @@ const allPosts = await Astro.glob('./gilgamesh/*.md');
 
 	<Search title={title}/>
 
-	<div class="relative overflow-x-auto lg:max-w-6xl lg:ml-80 lg:mt-2">
-		<table class="flex-wrap mt-3 table-auto w-11/12 text-xs left-text mx-auto text-left m-2">
-			<tbody class="bg-zinc-950 sm:text-sm lg:text-base">
+	<div class="relative overflow-x-auto lg:max-w-6xl lg:ml-80 lg:mt-2 lg:mb-5">
+		<table class="flex-wrap mt-3 table-auto w-11/12 left-text mx-auto text-left m-2">
+			<tbody class="bg-zinc-950">
 				{allPosts.reverse().map((chapter, index) => 
 					// <a href={`chapter/${chapter}`}>{chapter}</a>
 					<tr class="hover:bg-zinc-800">
@@ -95,8 +95,8 @@ const allPosts = await Astro.glob('./gilgamesh/*.md');
 							<ImageListComponent imagePath={`/src/images/gilgamesh/${index}.png`} altText="header image"/>
 						</td>
 						<td class="px-3 py-1 text-gray-500  dark:text-zinc-400">
-							<a href={`/gilgamesh/cap${index}`}>
-								capítulo {index}: {chapter.frontmatter.chapterTitle}
+							<a href={`/gilgamesh/cap${index}`} class="hover:text-white">
+								capítulo {chapter.frontmatter.chapterNumber}: {chapter.frontmatter.chapterTitle}
 							</a>
 						</td>
 						<td class="px-3 py-1 text-gray-500  dark:text-zinc-400">

@@ -17,7 +17,7 @@ const allPosts = await Astro.glob("./dataengineering/*.md");
 <MainHead title=`${title}`>
     <Navigation/>
     <div class="flex justify-center text-center">
-		<h1 class="font-bold text-4xl py-2  sm:text-6xl lg:pt-10 lg:text-8xl">
+		<h1 class="font-bold text-4xl py-2 sm:text-6xl lg:pt-10 lg:text-8xl">
 			DATA ENGINEERING
 		</h1>
     </div>
@@ -25,15 +25,15 @@ const allPosts = await Astro.glob("./dataengineering/*.md");
 	<hr class="h-px mb-3 mx-auto max-w-64 bg-gray-200 border-0 dark:bg-gray-200">
 
     <div class="flex justify-center">
-        <p class="italic text-center text-xs max-w-72 sm:text-base sm:max-w-lg lg:text-xl lg:max-w-3xl lg:pb-7 lg:pt-3">
+        <p class="italic text-center max-w-72 sm:max-w-lg lg:max-w-3xl lg:pb-7 lg:pt-3">
             <!-- A rotina enclausurada e miserável de uma jovem sustentada pela mãe psicologicamente instável a leva a fazer amizades com um ser inanimado.  Ambas as entidades escalam o pilar do transhumanismo a fim de alcançar novos patamares de existência. -->
 			Como construir sistemas para extrair dados e colocá-los em estado útil. De modo geral é constituído por 3 etapas: extração, carregamento e transformação. Também envolve garantir compliance de acordo com as regras de negócio e a LGPD.  
 		</p>
     </div>
 
     <div class="relative overflow-x-auto lg:max-w-3xl lg:mx-auto">
-		<table class="flex-wrap border mt-3 table-fixed w-11/12 text-xs left-text mx-auto text-left m-2 dark:border-gray-500">
-			<tbody class="bg-zinc-900 sm:text-sm lg:text-base">
+		<table class="flex-wrap border mt-3 table-fixed w-11/12 left-text mx-auto text-left m-2 dark:border-gray-500">
+			<tbody class="bg-zinc-900">
 				<tr>
 					<td scope="row" class="px-3 py-2 text-gray-500 whitespace-nowrap dark:text-zinc-400">
 						creation date
@@ -88,16 +88,16 @@ const allPosts = await Astro.glob("./dataengineering/*.md");
 
 
 	<div class="relative overflow-x-auto lg:max-w-6xl lg:ml-80 lg:mt-2">
-		<table class="flex-wrap mt-3 table-auto w-11/12 text-xs left-text mx-auto text-left m-2">
-			<tbody class="bg-zinc-950 sm:text-sm lg:text-base">
+		<table class="flex-wrap mt-3 table-auto w-11/12 left-text mx-auto text-left m-2">
+			<tbody class="bg-zinc-950">
 				{allPosts.reverse().map((chapter, index) => 
 					// <a href={`chapter/${chapter}`}>{chapter}</a>
 					<tr class="hover:bg-zinc-800">
 						<td class="lg:px-3 lg:py-1 text-gray-500">
 							<ImageListComponent imagePath={`/src/images/${title}/${index}.png`} altText="header image"/>
 						</td>
-						<td class="px-3 py-1 text-gray-500  dark:text-zinc-400">
-							<a href={`/${title}/cap${index}`}>
+						<td class="px-3 py-1 text-gray-500 dark:text-zinc-400">
+							<a href={`/${title}/cap${index}`} class="hover:text-white">
 								capítulo {index}: {chapter.frontmatter.chapterTitle}
 							</a>
 						</td>
