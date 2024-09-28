@@ -9,7 +9,7 @@
 const { title } = Astro.props;
 const pathToMyFeaturedPost = `${title}`;
 
-const posts = await Astro.glob('../pages/**/*.md');
+const posts = await Astro.glob('../pages/**/*.{md,mdx}');
 const capitulos = posts.filter(post => post.file.includes(pathToMyFeaturedPost));
 
 ---

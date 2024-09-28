@@ -1,0 +1,14 @@
+---
+const { word, title, note } = Astro.props;
+---
+
+<p><a href="#" class="text-zinc-100 underline underline-offset-4 decoration-2 decoration-double dark:text-zinc-100 hover:no-underline" data-popover-target="popover-image">{word}</a></p>
+	<div data-popover id="popover-image" role="tooltip" class="absolute z-10 invisible inline-block text-base sm:text-lg lg:text-xl text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-sm shadow-sm opacity-0 w-1/3 dark:text-gray-400 dark:bg-zinc-800 dark:border-gray-600">
+			<div class="col-span-3 p-3">
+				<div class="space-y-2">
+					<h3 class="font-semibold text-gray-900 dark:text-white">{title}</h3>
+					<p>{note}</p>
+				</div>
+			</div>
+			<!-- <img src="/docs/images/popovers/italy.png" class="h-full col-span-2" alt="Italy map" /> -->
+	</div>

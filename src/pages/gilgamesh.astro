@@ -11,13 +11,13 @@ const updatedDate = "2024-06-19";
 const tags = ["gilgamesh", "livro", "drama"];
 const status = "em progresso";
 
-const allPosts = await Astro.glob('./gilgamesh/*.md');
+const allPosts = await Astro.glob('./gilgamesh/*.{md,mdx}');
 ---
 
 <MainHead title="Gilgamesh">
     <Navigation/>
     <div class="flex justify-center">
-		<h1 class="font-bold text-6xl py-2 sm:text-7xl lg:pt-10 lg:text-8xl">
+		<h1 class="font-bold text-5xl py-2 sm:text-7xl lg:pt-10 lg:text-8xl">
 			GILGAMESH
 		</h1>
     </div>
@@ -31,7 +31,7 @@ const allPosts = await Astro.glob('./gilgamesh/*.md');
 		</p>
     </div>
 
-    <div class="relative overflow-x-auto lg:max-w-3xl lg:mx-auto">
+    <div class="text-base sm:text-xl relative overflow-x-auto lg:max-w-3xl lg:mx-auto">
 		<table class="flex-wrap border mt-3 table-fixed w-11/12 left-text mx-auto text-left m-2 dark:border-gray-500">
 			<tbody class="bg-zinc-900">
 				<tr>
@@ -57,7 +57,7 @@ const allPosts = await Astro.glob('./gilgamesh/*.md');
 					<td scope="row" class="px-3 py-1 text-gray-500  dark:text-white">
 						{tags.map((tag) => 
 							<span class="inline-block my-1 bg-gray-100 text-gray-800 font-medium me-2 px-1 py-0.5 lg:px-2.5 lg:py-0.5 rounded dark:bg-gray-700 dark:text-zinc-200 border border-gray-500">
-							<a href={`tags/${tag}`}>{tag}</a>
+								<a href={`tags/${tag}`}>{tag}</a>
 							</span>)}
                     </td>
 				</tr>
@@ -86,20 +86,20 @@ const allPosts = await Astro.glob('./gilgamesh/*.md');
 	<Search title={title}/>
 
 	<div class="relative overflow-x-auto lg:max-w-6xl lg:ml-80 lg:mt-2 lg:mb-5">
-		<table class="flex-wrap mt-3 table-auto w-11/12 left-text mx-auto text-left m-2">
-			<tbody class="bg-zinc-950">
+		<table class="border-separate border-spacing-y-1 flex-wrap mt-3 table-auto w-11/12 left-text mx-auto text-left m-2">
+			<tbody class="dark:text-zinc-200">
 				{allPosts.reverse().map((chapter, index) => 
 					// <a href={`chapter/${chapter}`}>{chapter}</a>
-					<tr class="hover:bg-zinc-800">
-						<td class="lg:px-3 lg:py-1 text-gray-500">
+					<tr class="bg-zinc-950 hover:bg-zinc-800">
+						<td class="text-gray-500">
 							<ImageListComponent imagePath={`/src/images/gilgamesh/${index}.png`} altText="header image"/>
 						</td>
-						<td class="px-3 py-1 text-gray-500  dark:text-zinc-400">
-							<a href={`/gilgamesh/cap${index}`} class="hover:text-white">
+						<td class="px-3 py-1 text-gray-500">
+							<a href={`/gilgamesh/cap${chapter.frontmatter.chapterNumber}`} class="hover:text-white">
 								capítulo {chapter.frontmatter.chapterNumber}: {chapter.frontmatter.chapterTitle}
 							</a>
 						</td>
-						<td class="px-3 py-1 text-gray-500  dark:text-zinc-400">
+						<td class="px-3 py-1 text-gray-500">
 							views: 301k
 						</td>
 					</tr>

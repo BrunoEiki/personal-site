@@ -1,17 +1,18 @@
 ---
 layout: ../../layouts/ChapterLayout.astro
-title: 'gilgamesh'
-bookTitle: 'Gilgamesh'
-chapterTitle: 'a carne que pensa'
+title: "gilgamesh"
+bookTitle: "Gilgamesh"
+chapterTitle: "a carne que pensa"
 chapterNumber: 0
 pubDate: 2024-06-18
-author: ['eiki']
-tags: ["gilgamesh", "capitulo"] 
+author: ["eiki"]
+tags: ["gilgamesh", "capitulo"]
 ---
+import FloatingNote from "../../components/FloatingNote.astro";
 
 – Tem certeza que ele pode fazer isso? – perguntou Aracy. O corredor mal iluminado estava vazio.
 
-– É o que diz o e-mail. 
+– É o que diz o e-mail.
 
 O colega Fabiano não transpirava confiança por debaixo dos óculos escuros. Já havia passado das dez da noite.
 
@@ -21,7 +22,7 @@ Aracy agachou-se no chão.
 
 –Você não precisa esperar aqui.
 
-– Na verdade, eu preciso – esclareceu Fabiano. – Toda vez que trago um paciente novo eles me dão uma gratificação, mas em espécie. Você me salvou. Estava apertado esse mês. E as ruas ficam perigosas nesse horário. 
+– Na verdade, eu preciso – esclareceu Fabiano. – Toda vez que trago um paciente novo eles me dão uma gratificação, mas em espécie. Você me salvou. Estava apertado esse mês. E as ruas ficam perigosas nesse horário.
 
 – Não sabia. E quanto à minha parte?
 
@@ -29,9 +30,9 @@ A luz de dentro do edifício de repente se acendeu, depois passaram a destrancar
 
 – Sente-se, fique confortável – disse o médico. Era uma sala grande, comum de clínicas de médio porte. As telas da senha e de atendimento estavam desligadas, assim como os computadores e os ar-condicionados. Pelo que Fabiano contara, a fachada do prédio consistia em trabalhar com inseminação artificial e manipulação gênica dos zigotos. – Fabiano, está com tempo? Ótimo, o dinheiro está atrás da bancada, em cima do banco. Amanhã tire os folhetos da federal.
 
-– Mas daqui a pouco a greve termina. 
+– Mas daqui a pouco a greve termina.
 
-– Queria atrair estudantes de mestrado ou doutorado. Vai haver exposição demais se os estudantes de graduação virem os folhetos. 
+– Queria atrair estudantes de mestrado ou doutorado. Vai haver exposição demais se os estudantes de graduação virem os folhetos.
 
 O homem pegou uma ficha de cima do balcão e folheou rapidamente. – Pode me chamar de Selmo. Sua condição física está dentro dos conformes, Aracy: pressão, fezes, coração, sangue. Não tem histórico de esquizofrenia na sua família, correto?
 
@@ -40,6 +41,8 @@ O homem pegou uma ficha de cima do balcão e folheou rapidamente. – Pode me ch
 – O procedimento pode ter diversos efeitos colaterais. Está ciente?
 
 – Sim
+
+<FloatingNote word="Italy" title="About" note="A Itália, país europeu com uma longa costa mediterrânea, deixou uma marca poderosa na culinária e na cultura ocidentais. A capital, Roma, é sede do Vaticano e abriga obras de arte monumentais e ruínas antigas. Outra cidade importante é Florença, com obras-primas do Renascimento, como o 'Davi', de Michelangelo, e o Domo de Brunelleschi. Destacam-se também Veneza, a cidade dos canais, e Milão, capital da moda italiana."/>
 
 – Antes de iniciarmos, quero que me repasse algumas informações para estudo adicional. Diga sua idade, gênero e sexualidade.
 
@@ -74,39 +77,3 @@ Aracy sentou-se na cadeira metálica.
 – Durante o período de adaptação vamos ver se o seu organismo é compatível com a cirurgia final. Assine esses papéis nos lugares marcados, depois entre naquela sala.
 
 Aracy não se deu o trabalho de ler os papéis; assinou com a caneta vermelha seu nome e prosseguiu para a porta. Teria achado mais romântico se pudesse fazer um pacto de sangue considerando a natureza profana da operação. Ainda assim, não estava nervosa. Estava determinada a conseguir o dinheiro para a sua amiga.
-
-<!-- 
----
-import ChapterLayout from "../../layouts/ChapterLayout.astro";
-
-const title = 'gilgamesh';
-const bookTitle = 'Gilgamesh';
-const chapterTitle = 'aquele que o abismo viu';
-const chapterNumber = 0;
-const createdDate = "2024-06-18";
-const author = ['eiki'];
-const tags = ["gilgamesh", "capitulo"];
-
----
-
-<ChapterLayout title={title}, bookTitle={bookTitle}, chapterTitle={chapterTitle}, chapterNumber={chapterNumber} >
-    <p>
-        -- Tem certeza que ele pode fazer isso por mim?
-    </p>
-    <p>    
-        -- Ele me deve um favor.
-    </p> 
-    <p>
-        -- Legalmente, digo.
-    </p>
-    <p>
-        -- Eu precisaria conversar com os meus advogados. Mas o meu último advogado foi preso, então não tenho como te dar uma resposta. Tudo bem por você?
-    </p>
-    <p>
-        -- Eu não aguento mais ser feito de carne.
-    </p>
-    <p>
-        -- O meu cara consegue te transmutar. Você não vai ser preso, eu acho. Talvez apareça no jornal como uma vítima psicologicamente instável. Ei, aí está o meu cara.
-    </p>
-</ChapterLayout> 
--->

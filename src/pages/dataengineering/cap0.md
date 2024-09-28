@@ -6,18 +6,24 @@ chapterTitle: 'intro'
 chapterNumber: 0
 pubDate: 30-07-2024
 author: ['eiki']
-image:
-    url: 'https://docs.astro.build/assets/rose.webp'
-    alt: 'The Astro logo on a dark background with a pink glow.'
 tags: ["data-engineering", "capitulo"]
 ---
 
-<h1 class="text-3xl">Materiais</h1>
+<h1 class="text-3xl font-bold">0.0 Materiais</h1>
 
-Fundamentals of Data Engineering (oReilly) [book]
-DataTalks [course]
+<ul class="list-disc">
+    <li>
+        Fundamentals of Data Engineering (oReilly) [book]
+    </li>
+    <li>
+        DataTalks [course]
+    </li>
+</ul>
+
+<h1 class="text-3xl font-bold">0.1 </h1>
 
 
+<img src="/src/images/1042uuu_white_stars.png" class="mx-auto"/>
 
 <!-- ---
 import ChapterLayout from "../../layouts/ChapterLayout.astro";

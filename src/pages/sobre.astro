@@ -4,7 +4,7 @@ import MainHead from "../layouts/MainHead.astro"
 import Navigation from "../components/Navigation.astro"
 
 import { Image } from 'astro:assets';
-import ryan2 from '../images/ryan2.png';
+import eldenring from '../images/elden_ring_t_pose_for_supremacy.jpg';
 ---
 
 <MainHead title="Astro">
@@ -17,9 +17,37 @@ import ryan2 from '../images/ryan2.png';
 
     <!-- <hr class="h-px mb-3 mx-auto max-w-64 lg:max-w-96 bg-gray-200 border-0 dark:bg-gray-200"> -->
 
-	<div class="mx-auto max-w-96 md:max-w-xl lg:max-w-3xl mb-5 lg:mb-10">
+	<div class="container md:mb-28 md:mt-10 md:mx-64 px-4">
+		<div class="flex flex-col md:flex-row md:items-start">
+			<div class="w-full md:max-w-md mb-6 md:mb-0">
+				<a href="https://www.deviantart.com/hermits4ge/art/Elden-Ring-Edit-T-Pose-for-Supremacy-915284964" target="_blank">
+					<Image src={eldenring}  alt="elden ring t pose edit" class="w-full h-auto">
+				</a>
+			</div>
+			<div class="w-full md:w-1/2 md:pl-8">
+				<p class="text-base font-bold sm:text-sm md:text-3xl md:m-5">
+					> design
+				</p>
+				<p class="text-xs sm:text-sm md:text-lg md:m-5">
+					design inspirado pelo <a href="https://gwern.net/" class="italic text-zinc-300">Gwern</a>.
+				</p>
+				<p class="text-xs sm:text-sm md:text-lg md:m-5">
+					o poema na página inicial é um trecho de "You Are Tired, (I think)" do E. E. Cummings, enquanto a arte ASCII do corvo com a chave é o símbolo do SciHub.
+				</p>
+				<p class="text-base font-bold sm:text-sm md:text-3xl md:m-5">
+					> website
+				</p>
+				<p class="text-xs sm:text-sm md:text-lg md:m-5">
+					o site foi desenvolvido com Astro e TailwindCSS para ser simples de criar e manter. nele haverá alguns artigos relacionados à computação e etimologia; outros são textos que escrevi no tempo livre.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- !SUBSTITUIDO PELO CODIGO ACIMA -->
+	<!-- <div class="mx-auto md:max-w-xl lg:max-w-md mb-5 lg:mb-10">
 		<a href="https://www.turbosquid.com/pt_br/3d-models/3d-ryan-gosling-hyper-realistic-full-body-fully-rigged-character-model-2142226" target="_blank">
-			<Image src={ryan2} alt="3d model of ryan gosling">
+			<Image src={eldenring} alt="3d model of ryan gosling">
 		</a>
 	</div>
 
@@ -37,5 +65,10 @@ import ryan2 from '../images/ryan2.png';
 		<p class="text-xs sm:text-sm lg:text-lg lg:mx-96">
 			a arte ASCII do corvo com a chave é o símbolo do SciHub. só achei legal e coloquei.
 		</p>
-	</div>
+	</div> -->
+
+
+
+	
+
 </MainHead>
