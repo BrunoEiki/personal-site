@@ -18,7 +18,7 @@ const allPosts = await Astro.glob('./escrita/*.{md,mdx}');
     <Navigation/>
     <div class="flex justify-center">
 		<h1 class="font-bold text-5xl py-2 sm:text-7xl lg:pt-10 lg:text-8xl">
-			LOREM IPSUM
+			ESCRITA
 		</h1>
     </div>
 
@@ -27,7 +27,7 @@ const allPosts = await Astro.glob('./escrita/*.{md,mdx}');
     <div class="flex justify-center">
         <p class="italic text-center max-w-72 sm:max-w-lg lg:max-w-3xl lg:pb-7 lg:pt-3">
             <!-- A rotina enclausurada e miserável de uma jovem sustentada pela mãe psicologicamente instável a leva a fazer amizades com um ser inanimado.  Ambas as entidades escalam o pilar do transhumanismo a fim de alcançar novos patamares de existência. -->
-			Pensamentos inacabados, textos, etc etc.
+			Pensamentos inacabados, textos, frases etc etc.
 		</p>
     </div>
 
@@ -75,7 +75,7 @@ const allPosts = await Astro.glob('./escrita/*.{md,mdx}');
 	</div>
 	
 
-	<div class="text-base sm:text-xl relative overflow-x-auto lg:max-w-3xl lg:mx-auto">
+	<div class="text-base sm:text-xl relative overflow-x-auto mx-auto px-5 sm:px-10 lg:max-w-3xl">
 		<ul class="list-inside space-y-4 marker:text-white">
 		{allPosts
 			.sort((a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()) // Ordena pela data de publicação
