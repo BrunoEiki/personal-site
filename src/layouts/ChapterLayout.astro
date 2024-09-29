@@ -8,10 +8,10 @@ import ChapterFooter from "../components/ChapterFooter.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<MainHead title={frontmatter.chapterTitle}>
+<MainHead title={frontmatter.chapterTitle} mode="">
     <Navigation/>
     <div class="flex justify-center text-center py-2 mb-2">
-        <h1 class="font-bold uppercase text-5xl lg:text-8xl lg:m-5">
+        <h1 class="font-bold uppercase text-4xl lg:text-8xl lg:m-5">
             <a href=`../${frontmatter.title}`>{frontmatter.bookTitle}</a>
         </h1>
     </div>
@@ -19,14 +19,17 @@ const { frontmatter } = Astro.props;
     <Search title={frontmatter.title}/>
     
     <div>
-        <h2 class="font-bold mt-6 ml-8 mr-20 text-xl sm:text-2xl lg:mt-6 lg:ml-80 lg:text-4xl">
+        <h2 class="font-bold mt-10 ml-8 mr-20 text-xl sm:text-2xl lg:mt-6 lg:ml-80 lg:text-4xl">
             CAPÍTULO {frontmatter.chapterNumber}: {frontmatter.chapterTitle}
         </h2>
+        <p class="ml-8 mr-20 font-thin text-zinc-500 text-sm sm:text-base lg:text-lg lg:mt-6 lg:ml-80">
+            {frontmatter.pubDate} • {frontmatter.author}
+        </p>
     </div>
 
     <hr class="h-px mb-3 mx-5 my-2 bg-gray-400 border-0 lg:mx-80 lg:my-5 dark:bg-gray-400">
     
-    <div class="lg:mx-100 px-5 lg:px-10 space-y-4 indent-8 leading-normal">
+    <div class="max-w-4xl mx-auto px-5 lg:px-10 space-y-4 indent-8 leading-normal">
         <slot/>
     </div>
 

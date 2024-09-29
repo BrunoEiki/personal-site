@@ -1,0 +1,88 @@
+---
+import Navigation from "../components/Navigation.astro"
+import Search from "../components/Search.astro"
+import MainHead from "../layouts/MainHead.astro"
+
+import ImageListComponent from "../components/ImageListComponent.astro"
+
+const title = "escrita";
+const createdDate = "2024-09-29";
+const updatedDate = "2024-09-29";
+const tags = ["escrita"];
+const status = "em progresso";
+
+const allPosts = await Astro.glob('./gilgamesh/*.{md,mdx}');
+---
+
+<MainHead title="/escrita | feiki website" mode="dark">
+    <Navigation/>
+    <div class="flex justify-center">
+		<h1 class="font-bold text-5xl py-2 sm:text-7xl lg:pt-10 lg:text-8xl">
+			ESCRITA
+		</h1>
+    </div>
+
+	<hr class="h-px mb-3 mx-auto max-w-64 bg-gray-700 border-0 dark:bg-gray-200">
+
+    <div class="flex justify-center">
+        <p class="italic text-center max-w-72 sm:max-w-lg lg:max-w-3xl lg:pb-7 lg:pt-3">
+            <!-- A rotina enclausurada e miserável de uma jovem sustentada pela mãe psicologicamente instável a leva a fazer amizades com um ser inanimado.  Ambas as entidades escalam o pilar do transhumanismo a fim de alcançar novos patamares de existência. -->
+			Pensamentos inacabados, textos, etc etc.
+		</p>
+    </div>
+
+    <div class="text-base sm:text-xl relative overflow-x-auto lg:max-w-3xl lg:mx-auto mb-10">
+		<table class="flex-wrap border mt-3 table-fixed w-11/12 left-text mx-auto text-left m-2 dark:border-gray-500">
+			<tbody class="bg-zinc-200 dark:bg-zinc-900">
+				<tr>
+					<td scope="row" class="px-3 py-2 text-gray-500 whitespace-nowrap dark:text-zinc-400">
+						creation date
+					</td>
+					<td scope="row" class="px-3 py-2 text-gray-500 whitespace-nowrap dark:text-white">
+						{createdDate}
+					</td>
+				</tr>
+				<tr>
+					<td scope="row" class="px-3 py-1 text-gray-500  dark:text-zinc-400">
+						updated date
+					</td>
+					<td scope="row" class="px-3 py-1 text-gray-500  dark:text-white">
+                        {updatedDate}
+                    </td>
+				</tr>
+				<tr>
+					<td scope="row" class="px-3 py-1 text-gray-500  dark:text-zinc-400">
+						tags
+					</td>
+					<td scope="row" class="px-3 py-1 text-gray-500  dark:text-white">
+						{tags.map((tag) => 
+							<span class="inline-block my-1 bg-gray-100 text-gray-800 font-medium me-2 px-1 py-0.5 lg:px-2.5 lg:py-0.5 rounded dark:bg-gray-700 dark:text-zinc-200 border border-gray-500">
+								<a href={`https://feiki.netlify.app/tags/${tag}`}>{tag}</a>
+							</span>)}
+                    </td>
+				</tr>
+				<tr>
+					<td scope="row" class="px-3 py-1 text-gray-500  dark:text-zinc-400">
+						status
+					</td>
+					<td scope="row" class="px-3 py-1 text-gray-500 dark:text-white">
+                        {status}
+                    </td>
+				</tr>
+                
+			</tbody>
+		</table>
+	</div>
+	
+
+	<div class="text-base sm:text-xl relative overflow-x-auto lg:max-w-3xl lg:mx-auto">
+		<ul class="list-disc list-inside space-y-4 marker:text-white">
+			<li>
+				<a href="localhost:4321/escritos/pensamentar" class="underline underline-offset-4">pensamentar</a>
+			</li>
+			<li>
+				dwefwg
+			</li>
+		</ul>
+	</div>
+</MainHead>

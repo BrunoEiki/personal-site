@@ -7,7 +7,7 @@ import { Image } from 'astro:assets';
 import eldenring from '../images/elden_ring_t_pose_for_supremacy.jpg';
 ---
 
-<MainHead title="Astro">
+<MainHead title="/sobre | feiki website" mode="dark">
     <Navigation/>
     <div class="flex justify-center">
         <h1 class="font-bold text-4xl py-2 sm:text-6xl lg:pt-10 lg:text-8xl">
@@ -15,21 +15,24 @@ import eldenring from '../images/elden_ring_t_pose_for_supremacy.jpg';
 		</h1>
     </div>
 
+    <hr class="h-px mb-3 mx-auto max-w-64 lg:max-w-96 bg-blue-700 border-0 dark:bg-gray-200">
+
+
     <!-- <hr class="h-px mb-3 mx-auto max-w-64 lg:max-w-96 bg-gray-200 border-0 dark:bg-gray-200"> -->
 
 	<div class="container md:mb-28 md:mt-10 md:mx-64 px-4">
 		<div class="flex flex-col md:flex-row md:items-start">
-			<div class="max-w-sm md:max-w-md mb-6 md:mb-0">
+			<div class="max-w-xs md:max-w-md mb-6 md:mb-0">
 				<a href="https://www.deviantart.com/hermits4ge/art/Elden-Ring-Edit-T-Pose-for-Supremacy-915284964" target="_blank">
 					<Image src={eldenring}  alt="elden ring t pose edit" class="w-full h-auto">
 				</a>
 			</div>
 			<div class="w-full md:w-1/2 md:pl-8">
-				<p class="text-base font-bold sm:text-md md:text-3xl md:m-5">
+				<p class="text-base font-bold sm:text-md md:text-3xl m-5">
 					> design
 				</p>
 				<p class="text-sm sm:text-base md:text-lg m-5">
-					design inspirado pelo <a href="https://gwern.net/" class="italic text-zinc-300">Gwern</a>.
+					design inspirado pelo <a href="https://gwern.net/" class="italic text-blue-700 dark:text-zinc-300">Gwern</a>.
 				</p>
 				<p class="text-sm sm:text-base md:text-lg m-5">
 					o poema na página inicial é um trecho de "You Are Tired, (I think)" do E. E. Cummings, enquanto a arte ASCII do corvo com a chave é o símbolo do SciHub.

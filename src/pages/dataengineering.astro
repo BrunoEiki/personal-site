@@ -14,7 +14,7 @@ const status = "em progresso";
 const allPosts = await Astro.glob("./dataengineering/*.{md,mdx}");
 ---
 
-<MainHead title=`${title}`>
+<MainHead title=`/dataengineering | feiki website` mode="dark">
     <Navigation/>
     <div class="flex justify-center text-center">
 		<h1 class="font-bold text-4xl py-2 sm:text-6xl lg:pt-10 lg:text-8xl">
@@ -57,7 +57,7 @@ const allPosts = await Astro.glob("./dataengineering/*.{md,mdx}");
 					<td scope="row" class="px-3 py-1 text-gray-500  dark:text-white">
 						{tags.map((tag) => 
 							<span class="inline-block my-1 bg-gray-100 text-gray-800 font-medium me-2 px-1 py-0.5 lg:px-2.5 lg:py-0.5 rounded dark:bg-gray-700 dark:text-zinc-200 border border-gray-500">
-							<a href={`tags/${tag}`}>{tag}</a>
+							<a href={`https://feiki.netlify.app/tags/${tag}`}>{tag}</a>
 							</span>)}
                     </td>
 				</tr>
@@ -87,7 +87,7 @@ const allPosts = await Astro.glob("./dataengineering/*.{md,mdx}");
 	<Search title={title}/>
 
 
-	<div class="relative overflow-x-auto lg:max-w-6xl lg:ml-80 lg:mt-2 lg:mb-5">
+	<div class="relative overflow-x-auto lg:max-w-6xl lg:ml-80 lg:mt-2 mb-5">
 		<table class="flex-wrap mt-3 table-auto w-11/12 left-text mx-auto text-left m-2">
 			<tbody class="bg-zinc-950">
 				{allPosts.reverse().map((chapter, index) => 

@@ -2,10 +2,10 @@
 import MainHead from "../layouts/MainHead.astro"
 ---
 
-<MainHead title="Astro">
+<MainHead title="feiki website" mode="dark">
 	<div class="h-screen flex items-center justify-center p-10 lg:p-20">
 		<div class="text-xxxs lg:text-xxs lg:m-8">
-			<pre class="font-mono leading-snug text-zinc-900 hover:text-zinc-400">                                           
+			<pre class="font-mono leading-snug text-zinc-100 hover:text-zinc-900 dark:text-zinc-900 dark:hover:text-zinc-400">                                           
                             .@@@@@@@@@@@* &                     #%&#((%@&&.     
                      .@@@@@@@@&@@@@@@@@@@@@@@,                 ,&(       /&%    
                      &@@@@@@@@@@@@@@@@@@@@@@@@@&                .%%/    .%%#    
@@ -84,7 +84,7 @@ import MainHead from "../layouts/MainHead.astro"
 	<p class="px-5 font-semibold lg:text-2xl">escritos</p>
 	<div class="relative overflow-x-auto mb-20">
 		<table class="table-fixed w-11/12 text-xs left-text mx-auto text-left m-2">
-			<thead class="bg-zinc-700 lg:text-base">
+			<thead class="bg-zinc-400 dark:bg-zinc-700 lg:text-base">
 				<tr class="dark:border-t-gray-500 border-t">
 					<th scope="col" class="px-3 py-2">
 						TÍTULO
@@ -97,9 +97,9 @@ import MainHead from "../layouts/MainHead.astro"
 					</th>
 				</tr>
 			</thead>
-			<tbody class="bg-zinc-900 lg:text-base">
+			<tbody class="bg-zinc-300 dark:bg-zinc-900 lg:text-base">
 				<tr class="dark:border-gray-500 border-y">
-					<td scope="row" class="px-3 py-2 text-gray-500 whitespace-pre-line dark:text-zinc-400">
+					<td scope="row" class="px-3 py-2 text-gray-900 dark:text-gray-500 whitespace-pre-line dark:text-zinc-400">
 						<a href="/gilgamesh" class="hover:text-white">gilgamesh</a>
 					</td>
 					<td scope="row" class="px-3 py-2 text-gray-500 dark:text-white">
@@ -118,6 +118,17 @@ import MainHead from "../layouts/MainHead.astro"
 					</td>
 					<td scope="row" class="px-3 py-2 text-gray-500 dark:text-white">
 						30-07-2024
+					</td>
+				</tr>
+				<tr class="dark:border-gray-500 border-y">
+					<td scope="row" class="px-3 py-2 text-gray-500 whitespace-pre-line dark:text-zinc-400">
+						<a href="/escrita" class="hover:text-white">escrita</a>
+					</td>
+					<td scope="row" class="px-3 py-2 text-gray-500 dark:text-white">
+						frases, textos
+					</td>
+					<td scope="row" class="px-3 py-2 text-gray-500 dark:text-white">
+						29-09-2024
 					</td>
 				</tr>
 			</tbody>

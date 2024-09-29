@@ -1,32 +1,23 @@
 ---
 ---
 <div class="text-base sm:text-xl italic w-full text-center pt-4 pb-2 ">
-    <a href="/" class="separator hover:text-white">início</a>
-    <a href="/sobre/" class="separator hover:text-white">sobre</a>
-    <a href="/links/" class="separator hover:text-white">links</a>
+    <a href="/" class="separator hover:text-zinc-600 dark:hover:text-white">início</a>
+    <a href="/sobre/" class="separator hover:text-zinc-600 dark:hover:text-white">sobre</a>
+    <a href="/links/" class="separator hover:text-zinc-600 dark:hover:text-white">links</a>
 </div>
 
 <style>
     @tailwind base;
-        .separator:before {
-            content: "|";
-            margin: 0 0.5rem;
-            color: white;
-        }
-        .separator:first-child:before {
-            content: "";
-            margin: 0;
-        }
 
-@media (prefers-color-scheme: dark) {
-        .separator:before {
-            content: "|";
-            margin: 0 0.5rem;
-            color: white;
-        }
-        .separator:first-child:before {
-            content: "";
-            margin: 0;
-        }
+    .separator:before {
+        content: "|";
+        margin: 0 0.5rem;
+        color: black;
+        @apply dark:text-white
+    }
+
+    .separator:first-child:before {
+        content: "";
+        margin: 0;
     }
 </style>
