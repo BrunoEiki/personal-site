@@ -5,20 +5,20 @@ import MainHead from "../layouts/MainHead.astro"
 
 import ImageListComponent from "../components/ImageListComponent.astro"
 
-const title = "dataengineering"
+const title = "statistical-learning"
 const createdDate = "30-07-2024";
 const updatedDate = "30-07-2024";
 const tags = ["estudo", "airflow", "terraform", "cloud", "python"];
 const status = "em progresso";
 
-const allPosts = await Astro.glob("./dataengineering/*.{md,mdx}");
+const allPosts = await Astro.glob("./statistical-learning/*.{md,mdx}");
 ---
 
-<MainHead title=`/dataengineering | feiki website` mode="dark">
+<MainHead title=`/statistical-learning | feiki website` mode="dark">
     <Navigation/>
     <div class="flex justify-center text-center">
 		<h1 class="font-bold text-4xl py-2 sm:text-6xl lg:pt-10 lg:text-8xl">
-			DATA ENGINEERING
+			ANÁLISE DE DADOS
 		</h1>
     </div>
 

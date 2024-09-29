@@ -16,6 +16,7 @@
     "@fontsource/source-serif-pro": "^5.0.8",
     "astro": "^4.10.2",
     "flowbite": "^2.5.1",
+    "katex": "^0.16.11",
     "personal-site": "file:",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.4.5"
