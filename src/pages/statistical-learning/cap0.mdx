@@ -47,16 +47,15 @@ X é a variável independente, um vetor composto por *p* preditores para encontr
 
 **Problemas de classificação** são uma classe de problemas que tentam prever a qual grupo Y pertence entre um número finito de alternativas. Por exemplo, prever se uma instância de *Paciente* deveria ser colocada no grupo "urgência", "emergência" ou "consulta" com base em suas características.
 
-Já os **Problemas de Regressão** preveem um valor numérico. Mas isso nem sempre é tão bem definido assim; a Regressão Logística pode ser usada tanto para previões quantitativas quanto para as qualitativas, uma vez que fornece probabilidades para cada grupo.
+Já os **Problemas de Regressão** <code class='bg-zinc-200 text-zinc-600 p-2'>preveem</code> um valor numérico. Mas isso nem sempre é tão bem definido assim; a Regressão Logística pode ser usada tanto para previões quantitativas quanto para as qualitativas, uma vez que fornece probabilidades para cada grupo.
 
 
 No **Aprendizado Não-Supervisionado** existem os preditores X, mas não existe um Y definido. O objetivo é *fuzzy*, "bagunçado", tenta-se encontrar possíveis relações entre os tipos. É difícil averiguar a qualidade por não ter um objetivo. Bom para pré-processamento.
 
 <div class="max-w-lg mx-auto py-5">
     <Image src={diagram} alt="supervised and unsupervised venn diagram"/>
-    <p class="text-lg text-zinc-600 text-center">**Figura 1**: Diagrama de Venn que mostra os tópicos mais relevantes em aprendizado supervisionado e não-supervisionado.</p>
+    {/* <p class="text-lg text-zinc-600 text-center">**Figura 1**: Diagrama de Venn que mostra os tópicos mais relevantes em aprendizado supervisionado e não-supervisionado.</p> */}
 </div>
-
 
 <h2 class='text-2xl font-bold pt-10'>Materiais</h2>
 
@@ -66,29 +65,3 @@ No **Aprendizado Não-Supervisionado** existem os preditores X, mas não existe 
 <ul class="list-disc list-inside pb-10">
     <li><a href="https://www.statlearning.com/" class="text-blue-700 underline underline-offset-2" target="_blank">Introduction to Statistical Learning [book]</a></li>
 </ul>
-
-{/* // import ChapterLayout from "../../layouts/ChapterLayout.astro";
-
-// const title = 'dataengineering';
-// const bookTitle = 'Data Engineering';
-// const chapterTitle = 'intro';
-// const chapterNumber = 0;
-// const createdDate = "30-07-2024";
-// const author = ['eiki'];
-// const tags = ["data-engineering", "capitulo"];
-
-// const allPosts = await Astro.glob('/src/pages/dataengineering/*.astro');
-// ---
-
-// <ChapterLayout title={title}, bookTitle={bookTitle}, chapterTitle={chapterTitle}, chapterNumber={chapterNumber}, capitulos={allPosts}>
-    
-// </ChapterLayout>
-
-// <script>
-//     function contentToHtml(text) {
-//         return text
-//             .split('\n\n')
-//             .map(paragraph => `<p>${paragraph}</p>`)
-//             .join('')
-//     }
-// </script> */}

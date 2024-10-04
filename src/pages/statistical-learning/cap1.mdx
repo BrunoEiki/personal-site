@@ -8,9 +8,13 @@ pubDate: 2024-09-29
 author: ['eiki']
 tags: ["isl", "estudo", "python"]
 ---
+import FloatingNote from "../../components/FloatingNote.astro";
+
+{/*
 import Latex from '../../components/Latex.astro';
-export const f1 = 'Y = f(X) + \\epsilon';
+export const f1 = 'Y = f(X) = E(Y|X = x_1, X = x_2)';
 export const f2 = 'X = \\begin{pmatrix}X_1 \\\\ X_2 \\\\ X_3 \\end{pmatrix}';
+  */}
 
 import { Image } from 'astro:assets';
 import diagram from '../../images/supervised_diagram.png';
@@ -36,3 +40,19 @@ import stars from '../../images/1042uuu_white_stars.png';
 <p class="text-right">— Mark Forsyth, The Etymologicon</p>
 
 <Image src={stars} alt="airport stars" class="max-w-full pb-10"/>
+
+<h2 class='text-3xl font-bold pt-10'>1/ Regressão Linear</h2>
+
+A função de regressão linear é igual ao "Valor Esperado" de Y dado o vetor X
+<br/>
+$$
+Y = f(X) = E(Y|X = x_1, X = x_2)
+$$
+<br/>
+
+Vamos supor que $Y$ seja a venda esperada e $X$ corresponda a produtos vendidos 
+($X_1$ é celular e $X_2$ é computador). Dado que 
+
+A melhor função é aquela que não tem erros. Assim vamos definir $(Y - g(X))^2$, o **erro médio quadrático** (MSE), em que $g(X)$ é uma função qualquer naquele ponto. 
+
+No entanto, é impossível retirar os **erros irredutíveis**, que surgem por conta da mecânica quântica, da falta de dados observados, de erros na medição etc. Assim:
