@@ -16,11 +16,11 @@ export const f1 = 'Y = f(X) = E(Y|X = x_1, X = x_2)';
 export const f2 = 'X = \\begin{pmatrix}X_1 \\\\ X_2 \\\\ X_3 \\end{pmatrix}';
   */}
 
-import { Image } from 'astro:assets';
-import diagram from '../../images/supervised_diagram.png';
-
 import { Image2 } from 'astro:assets';
 import stars from '../../images/1042uuu_white_stars.png';
+
+import { Image } from 'astro:assets';
+import linear from '../../images/statistical-learning/linear-regression.png';
 
 <blockquote class='italic text-right'>
     <p>
@@ -43,16 +43,68 @@ import stars from '../../images/1042uuu_white_stars.png';
 
 <h2 class='text-3xl font-bold pt-10'>1/ Regressão Linear</h2>
 
-A função de regressão linear é igual ao "Valor Esperado" de Y dado o vetor X
+{/* A função de regressão linear é igual ao "Valor Esperado" de Y dado o vetor X
 <br/>
 $$
 Y = f(X) = E(Y|X = x_1, X = x_2)
 $$
-<br/>
+<br/> */}
 
-Vamos supor que $Y$ seja a venda esperada e $X$ corresponda a produtos vendidos 
-($X_1$ é celular e $X_2$ é computador). Dado que 
+Várias abordagens mais avançadas de aprendizado estatístico são generalizações 
+da Regressão Linear. É relevante construir uma base sólida sobre seu funcionamento.
+Como visto no capítulo anterior, ela é uma função do  primeiro grau com coeficientes 
+$\beta_0$ e $\beta_1$, respectivamente a interseção e a inclinação da reta.
 
-A melhor função é aquela que não tem erros. Assim vamos definir $(Y - g(X))^2$, o **erro médio quadrático** (MSE), em que $g(X)$ é uma função qualquer naquele ponto. 
+A estimativa dos coeficientes é determinante para prever valores futuros e identificar
+o quão forte as variáveis estão relacionadas. A diferença entre a estimativa e o valor
+real representa o residual $e_i = y_i - y^{ˆ}_i$
 
-No entanto, é impossível retirar os **erros irredutíveis**, que surgem por conta da mecânica quântica, da falta de dados observados, de erros na medição etc. Assim:
+
+
+Vamos supor que $Y$ seja a venda e $X$ corresponda ao investimento em propaganda de produtos 
+($X_1$ é celular e $X_2$ é computador). Iremos organizar os dados observados
+em pares de valores $(x_1, y_1)$, $(x_2, y_2)$, ..., $(x_n, y_n)$. Na observação $n = 1$,
+um investimento de R$2000,00 resultou na venda de 12 unidades de celular. 
+De maneira intuitiva, a melhor reta é aquela que atravessa o gráfico minimizando a distância
+entre a reta e os pontos circundantes. Idealmente a diferença é zero, mas isso nunca acontece
+em observações reais.
+
+<Image src={linear} alt="Sales and TV plot" class="max-w-full pb-10"/>
+
+Minimizar os residuais é encontrar a melhor estimativa possível dos coeficientes, e com
+isso boas aproximações para o valor real. A **função de custo** (*cost function*, ou também *loss function*) tem o
+propósito de medir a proximidade. Uma das maneiras mais populares é via RSS 
+(*Residual Sum of Squares*):
+
+$$
+RSS = e^{2}_1 + e^{2}_2 + e^{2}_3 ... + e^{2}_n
+$$
+
+RSS traz as seguintes vantagens:
+
+<ul class="list-disc list-inside pb-10">
+    <li>Garante que o resultado seja sempre positivo</li>
+    <li>Dá maior peso para os pontos mais afastados da reta</li>
+    <li>Ao contrário do valor absoluto é diferenciável em todo seu domínio, 
+    inclusive na origem. Muito útil para o Grandiente Descendente e outras técnicas futuras</li>
+</ul>
+
+O último motivo para usar quadrados está ligado ao ruído gaussiano (*gaussian noise*). Isso está melhor explicado
+no primeiro link em *Recursos Adicionais*, mas o que acontece é o seguinte: em todo sistema complexo haverá causas 
+independentes para o erro entre o modelo e a realidade. De acordo com o Teorema do 
+Limite Central, o ruído total segue a forma de uma distribuição normal (gaussiana). 
+Sabemos que a distribuição normal tem dois parâmetros, a média e a variância. 
+
+$$
+\sigma^2 = \frac{1}{m}\sum_{i}(h_0(X^{(i)} - Y^{(i)}))^2
+$$
+
+Um dos termos da variância é numericamente idêntico ao RSS. Assim, minimizar o RSS é o mesmo que
+reduzir o erro randômico do sistema, a variância. Em essência, estamos lidando com uma distribuição gaussiana.
+Observe que cada função de custo corresponde a alguma distribuição de ruído.
+
+
+<h2 class='text-2xl font-bold pt-10'>Recursos Adicionais</h2>
+<ul class="list-disc list-inside pb-10">
+    <li><a href="https://datascience.stackexchange.com/questions/10188/why-do-cost-functions-use-the-square-error" class="text-blue-700 underline underline-offset-2" target="_blank">Why do cost functions use the square error? [StackExchange]</a></li>
+</ul>

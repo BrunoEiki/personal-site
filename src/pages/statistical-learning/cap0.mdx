@@ -1,67 +1,132 @@
 ---
 layout: ../../layouts/ChapterLayout.astro
-title: 'statistical-learning'
-bookTitle: 'Análise de Dados'
-chapterTitle: 'intro'
+title: "statistical-learning"
+bookTitle: "Análise de Dados"
+chapterTitle: "intro"
 chapterNumber: 0
 pubDate: 2024-09-29
-author: ['eiki']
+author: ["eiki"]
 tags: ["isl", "estudo", "python"]
 ---
-import Latex from '../../components/Latex.astro';
-export const f1 = 'Y = f(X) + \\epsilon';
-export const f2 = 'X = \\begin{pmatrix}X_1 \\\\ X_2 \\\\ X_3 \\end{pmatrix}';
 
-import { Image } from 'astro:assets';
-import diagram from '../../images/supervised_diagram.png';
+import Latex from "../../components/Latex.astro";
+export const f1 = "Y = f(X) + \\epsilon";
+export const f2 = "X = \\begin{pmatrix}X_1 \\\\ X_2 \\\\ X_3 \\end{pmatrix}";
 
-import { Image2 } from 'astro:assets';
-import stars from '../../images/1042uuu_white_stars.png';
+import { Image } from "astro:assets";
+import diagram from "../../images/statistical-learning/supervised_diagram.png";
 
-<blockquote class='italic text-right'>
-    <p>
-    There’s obviously a hierarchy of information. It ranges from life-changing good to life-changing disastrous. That got me thinking: What would be the most interesting and useful information anyone could get their hands on?
-    </p>
+import { Image2 } from "astro:assets";
+import stars from "../../images/1042uuu_white_stars.png";
+
+import { Image3 } from "astro:assets";
+import flexibility from "../../images/statistical-learning/flexibility.png";
+
+<blockquote class="italic text-right">
+	<p>
+		There’s obviously a hierarchy of information. It ranges from
+		life-changing good to life-changing disastrous. That got me thinking:
+		What would be the most interesting and useful information anyone could
+		get their hands on?
+	</p>
 </blockquote>
 
-<p class="text-right">—  Morgan Housel, <a href="https://collabfund.com/blog/information-that-would-get-your-attention/" class="underline underline-offset-2 text-blue-700">CollabFund</a></p>
-<Image src={stars} alt="airport stars" class="max-w-full pb-10"/>
+<p class="text-right">
+	— Morgan Housel, <a href="https://collabfund.com/blog/information-that-would-get-your-attention/" class="underline underline-offset-2 text-blue-700">CollabFund</a>
+</p>
+<Image src={stars} alt="airport stars" class="max-w-full pb-10" />
 
 Na análise de dados, o que desejamos fazer é realizar previsões, avaliar a qualidade das previsões e entender o comportamento dos fenômenos observados. De modo geral, essa é a ordem de importância para o mercado. Nesse capítulo vou abordar sobre:
 
 <ul class="list-disc list-inside">
-    <li>aprendizado supervisionado e não-supervisionado</li>
-    <li>regressão e classificação</li>
+	<li>aprendizado supervisionado e não-supervisionado</li>
+	<li>regressão e classificação</li>
 </ul>
 
-<h2 class='text-3xl font-bold pt-10'>1/ Introdução</h2>
+<h2 class="text-2xl font-bold pt-10">1/ Introdução</h2>
 
 <hr class="h-px mb-3 mx-5 mt-0 bg-gray-600 border-0 lg:max-w-4xl dark:bg-gray-400"></hr>
 
-Todo modelo matemático terá variáveis de entrada e de saída, que correspondem a **X** e **Y**. Podemos chamar Y de variável dependente, aquilo que se deseja prever. 
+Todo modelo matemático terá variáveis de entrada e de saída, que correspondem a **X** e **Y**. Podemos chamar Y de variável dependente, aquilo que se deseja prever.
 
-<Latex formula={f1}/>
+<Latex formula={f1} />
 
-X é a variável independente, um vetor composto por *p* preditores para encontrar a melhor estimativa para Y.  Nota-se na equação acima um epsilon: este é o **erro inerente** a qualquer modelo, o qual não pode ser reduzido. Há sempre um limite para quantas variáveis se observa, a qualidade dessa observação e o limite do próprio modelo em fazer a predição. Afinal, o mapa não é o território.
-<Latex formula={f2}/>
+X é a variável independente, um vetor composto por _p_ preditores para encontrar a melhor estimativa para Y. Nota-se na equação acima um epsilon: este é o **erro inerente** a qualquer modelo, o qual não pode ser reduzido. Há sempre um limite para quantas variáveis se observa, a qualidade dessa observação e o limite do próprio modelo em fazer a predição. Afinal, o mapa não é o território.
 
-**Problemas de classificação** são uma classe de problemas que tentam prever a qual grupo Y pertence entre um número finito de alternativas. Por exemplo, prever se uma instância de *Paciente* deveria ser colocada no grupo "urgência", "emergência" ou "consulta" com base em suas características.
+<Latex formula={f2} />
+
+**Problemas de classificação** são uma classe de problemas que tentam prever a qual grupo Y pertence entre um número finito de alternativas. Por exemplo, prever se uma instância de _Paciente_ deveria ser colocada no grupo "urgência", "emergência" ou "consulta" com base em suas características.
 
 Já os **Problemas de Regressão** <code class='bg-zinc-200 text-zinc-600 p-2'>preveem</code> um valor numérico. Mas isso nem sempre é tão bem definido assim; a Regressão Logística pode ser usada tanto para previões quantitativas quanto para as qualitativas, uma vez que fornece probabilidades para cada grupo.
 
-
-No **Aprendizado Não-Supervisionado** existem os preditores X, mas não existe um Y definido. O objetivo é *fuzzy*, "bagunçado", tenta-se encontrar possíveis relações entre os tipos. É difícil averiguar a qualidade por não ter um objetivo. Bom para pré-processamento.
+No **Aprendizado Não-Supervisionado** existem os preditores X, mas não existe um Y definido. O objetivo é _fuzzy_, "bagunçado", tenta-se encontrar possíveis relações entre os tipos. É difícil averiguar a qualidade por não ter um objetivo. Bom para pré-processamento.
 
 <div class="max-w-lg mx-auto py-5">
-    <Image src={diagram} alt="supervised and unsupervised venn diagram"/>
-    {/* <p class="text-lg text-zinc-600 text-center">**Figura 1**: Diagrama de Venn que mostra os tópicos mais relevantes em aprendizado supervisionado e não-supervisionado.</p> */}
+	<Image src={diagram} alt="supervised and unsupervised venn diagram" />
+	{/* <p class="text-lg text-zinc-600 text-center">**Figura 1**: Diagrama de Venn que mostra os tópicos mais relevantes em aprendizado supervisionado e não-supervisionado.</p> */}
 </div>
 
-<h2 class='text-2xl font-bold pt-10'>Materiais</h2>
+<h2 class="text-2xl font-bold pt-10">2/ Qualidade do Encaixe</h2>
+<hr class="h-px mb-3 mx-5 mt-0 bg-gray-600 border-0 lg:max-w-4xl dark:bg-gray-400"></hr>
 
+Em Regressão, a medida da qualidade da previsão mais comum é o MSE
+(_mean squared error_), o erro médio quadrático.
+
+$$
+MSE = \frac{1}{n}\sum_{i=1}^{n}(y_i - f^{ˆ}(x_i))^2
+$$
+
+Treina-se ele a partir dos dados de treinamento, e depois testamos
+nos dados de teste (nunca antes vistos pelo modelo). Na prática, não
+importa muito o desempenho nos dados de treinamento, e sim no de teste.
+
+
+Na imagem abaixo há dois gráficos: o gráfico da esquerda exibe uma série de pontos do
+conjunto de treinamento e uma curva preta que representa a função verdadeira; as curvas de outras
+cores são curvas com diferentes graus de liberdade (flexibility) estimadas a partir do treinamento.
+
+
+<div class="max-w-3xl mx-auto py-5">
+	<Image src={flexibility} alt="relationship between flexibility and MSE" />
+	{/* <p class="text-lg text-zinc-600 text-center">**Figura 1**: Diagrama de Venn que mostra os tópicos mais relevantes em aprendizado supervisionado e não-supervisionado.</p> */}
+</div>
+
+No gráfico da direita a curva vermelha representa o resultado do MSE de teste. A cinza
+do MSE de treinamento. Já a linha tracejada demarca a variância, ou seja, o 
+erro irredutível do sistema. 
+
+<div class="bg-zinc-200 border border-black p-5 m-10">
+	[...] we observe a monotone decrease in the training
+	MSE and a U-shape in the test MSE. This is a fundamental property of
+	statistical learning that holds regardless of the particular data set at hand
+	and regardless of the statistical method being used. **As model flexibility
+	increases, the training MSE will decrease, but the test MSE may not.** When
+	a given method yields a small training MSE but a large test MSE, we are
+	said to be overfitting the data.
+</div>
+
+<h2 class="text-2xl font-bold pt-10">3/ Tradeoff Viés-Variância</h2>
 <hr class="h-px mb-3 mx-5 mt-0 bg-gray-600 border-0 lg:max-w-4xl dark:bg-gray-400"></hr>
 
 
+Though the mathematical proof is beyond the scope of this book, it is
+possible to show that the expected test MSE, for a given value x0, can
+always be decomposed into the sum of three fundamental quantities: the
+variance of $f^{ˆ}(x_0)$, the squared bias of $f^{ˆ}(x_0)$ and the variance of the error
+variance terms $\epsilon$.
+
+<h2 class="text-2xl font-bold pt-10">Materiais</h2>
+
+<hr class="h-px mb-3 mx-5 mt-0 bg-gray-600 border-0 lg:max-w-4xl dark:bg-gray-400"></hr>
+
 <ul class="list-disc list-inside pb-10">
-    <li><a href="https://www.statlearning.com/" class="text-blue-700 underline underline-offset-2" target="_blank">Introduction to Statistical Learning [book]</a></li>
+	<li>
+		<a
+			href="https://www.statlearning.com/"
+			class="text-blue-700 underline underline-offset-2"
+			target="_blank"
+		>
+			Introduction to Statistical Learning [book]
+		</a>
+	</li>
 </ul>
