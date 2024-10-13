@@ -5,7 +5,7 @@ import MainHead from "../layouts/MainHead.astro"
 <MainHead title="feiki website" mode="dark">
 	<div class="h-screen flex items-center justify-center p-10 lg:p-20">
 		<div class="text-xxxs lg:text-xxs lg:m-8">
-			<pre class="font-mono leading-snug text-zinc-100 hover:text-zinc-900 dark:text-zinc-900 dark:hover:text-zinc-400">                                           
+			<pre class="font-mono leading-snug text-zinc-100 hover:text-zinc-900 dark:text-zinc-900 dark:hover:text-zinc-400 glitch-animation opacity-0 transition-opacity duration-300">                                           
                             .@@@@@@@@@@@* &                     #%&#((%@&&.     
                      .@@@@@@@@&@@@@@@@@@@@@@@,                 ,&(       /&%    
                      &@@@@@@@@@@@@@@@@@@@@@@@@@&                .%%/    .%%#    
@@ -70,7 +70,7 @@ import MainHead from "../layouts/MainHead.astro"
                                                                           /&@@@&
 		</pre>
 		</div>
-		<p class="text-right text-xs sm:text-sm lg:text-lg">
+		<p class="text-right text-xs sm:text-sm lg:text-lg glitch-animation2">
 			You are tired,<br/>
 			(I think)<br/>
 			Of the always puzzle of living and doing;<br/>
@@ -135,3 +135,44 @@ import MainHead from "../layouts/MainHead.astro"
 		</table>
 	</div>
 </MainHead>
+
+<style>	
+	.font-mono:hover {
+		text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 
+		0 0 10px rgba(0, 0, 255, 0.5), 
+		0 0 15px rgba(0, 0, 255, 0.3);
+	}
+	@keyframes waterEffect {
+        0% { transform: translate(0, 0); }
+        25% { transform: translate(-1.5px, 1.5px); }
+        50% { transform: translate(1.5px, -1.5px); }
+        75% { transform: translate(-1px, 1px); }
+        100% { transform: translate(0, 0); }
+    }
+
+    .glitch-animation {
+        animation: waterEffect 4s infinite reverse;
+        color: #e4e4e7; 
+        text-shadow: 0 0 5px rgba(228, 228, 231, 0.5), 
+                     0 0 10px rgba(228, 228, 231, 0.3);
+    }
+    
+	.glitch-animation2 {
+        color: #e4e4e7;
+        text-shadow: 0 0 5px rgba(228, 228, 231, 0.5), 
+                     0 0 10px rgba(228, 228, 231, 0.3);
+    }
+
+    .text-xxxs:hover .glitch-animation {
+        opacity: 1;
+    }
+
+    .text-xxxs .glitch-animation {
+        opacity: 0;
+        transition: opacity 0.3s; 
+    }
+
+    .text-xxxs:hover .glitch-animation {
+        opacity: 1;
+    }
+</style>
